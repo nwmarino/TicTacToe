@@ -204,6 +204,7 @@ namespace TicTacToe
                 return;
             gameRunning = true;
             titleLabel.Text = "";
+            if (tiles[pos].type != '0') return;
             tiles[pos].type = type;
             assignProp(pos);
             if (game()) return;
