@@ -115,11 +115,9 @@ namespace TicTacToe
             {
                 case char when winType.Equals(type):
                     playerScore++;
-                    updateScore();
                     break;
                 case char when winType.Equals(cpuType):
                     cpuScore++;
-                    updateScore();
                     break;
             }
             clearBoard();
@@ -191,11 +189,14 @@ namespace TicTacToe
             {
                 tile.BackgroundImage = null;
                 tile.type = '0';
-            } 
+            }
+            updateScore();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            playerScore = 0;
+            cpuScore = 0;
             clearBoard();
         }
 
