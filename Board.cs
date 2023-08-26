@@ -181,16 +181,17 @@ namespace TicTacToe
             move++;
         }
 
-        private void clearBoard()
+        private async void clearBoard()
         {
+            gameRunning = false;
+            move = 0;
+            lastPosition = -1;
+            await Task.Delay(1000);
             foreach (Tile tile in tiles)
             {
                 tile.BackgroundImage = null;
                 tile.type = '0';
-            }
-            gameRunning = false;
-            move = 0;
-            lastPosition = -1;
+            } 
         }
 
         private void resetButton_Click(object sender, EventArgs e)
