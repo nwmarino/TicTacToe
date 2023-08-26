@@ -12,6 +12,11 @@ namespace TicTacToe
             get; set;
         }
 
+        private int move
+        {
+            get; set;
+        }
+
         private int playerScore
         {
             get; set;
@@ -37,10 +42,6 @@ namespace TicTacToe
             get; set;
         }
 
-        // 0 1 2
-        // 3 4 5
-        // 6 7 8
-
         private readonly Image xImg;
         private readonly Image oImg;
 
@@ -52,6 +53,7 @@ namespace TicTacToe
                                  blTile, bTile, brTile };
             playerScore = 0;
             cpuScore = 0;
+            move = 0;
             updateScore();
             xImg = Image.FromFile("assets/x.png");
             oImg = Image.FromFile("assets/o.png");
@@ -97,6 +99,11 @@ namespace TicTacToe
             if (checkColumns('o') || checkRows('o') || checkDiags('o'))
             {
                 appointScore('o');
+                return true;
+            }
+            if (move == 9)
+            {
+                clearBoard();
                 return true;
             }
             return false;
@@ -171,6 +178,7 @@ namespace TicTacToe
                     tiles[pos].type = 'x';
                     break;
             }
+            move++;
         }
 
         private void clearBoard()
@@ -181,6 +189,7 @@ namespace TicTacToe
                 tile.type = '0';
             }
             gameRunning = false;
+            move = 0;
             lastPosition = -1;
         }
 
