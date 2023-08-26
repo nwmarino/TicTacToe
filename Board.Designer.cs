@@ -42,7 +42,7 @@
             this.TitlePic = new System.Windows.Forms.PictureBox();
             this.resetButton = new TicTacToe.RButton();
             this.scoreLabel = new TicTacToe.RLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.xPlayer = new System.Windows.Forms.RadioButton();
             this.oPlayer = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePic)).BeginInit();
@@ -63,6 +63,7 @@
             this.boardCenter.Size = new System.Drawing.Size(60, 60);
             this.boardCenter.TabIndex = 0;
             this.boardCenter.UseVisualStyleBackColor = false;
+            this.boardCenter.Click += new System.EventHandler(this.boardCenter_Click);
             // 
             // boardRight
             // 
@@ -79,6 +80,7 @@
             this.boardRight.Size = new System.Drawing.Size(60, 60);
             this.boardRight.TabIndex = 1;
             this.boardRight.UseVisualStyleBackColor = false;
+            this.boardRight.Click += new System.EventHandler(this.boardRight_Click);
             // 
             // boardLeft
             // 
@@ -95,6 +97,7 @@
             this.boardLeft.Size = new System.Drawing.Size(60, 60);
             this.boardLeft.TabIndex = 2;
             this.boardLeft.UseVisualStyleBackColor = false;
+            this.boardLeft.Click += new System.EventHandler(this.boardLeft_Click);
             // 
             // boardTop
             // 
@@ -111,6 +114,7 @@
             this.boardTop.Size = new System.Drawing.Size(60, 60);
             this.boardTop.TabIndex = 3;
             this.boardTop.UseVisualStyleBackColor = false;
+            this.boardTop.Click += new System.EventHandler(this.boardTop_Click);
             // 
             // boardBottom
             // 
@@ -127,6 +131,7 @@
             this.boardBottom.Size = new System.Drawing.Size(60, 60);
             this.boardBottom.TabIndex = 4;
             this.boardBottom.UseVisualStyleBackColor = false;
+            this.boardBottom.Click += new System.EventHandler(this.boardBottom_Click);
             // 
             // boardTopLeft
             // 
@@ -143,6 +148,7 @@
             this.boardTopLeft.Size = new System.Drawing.Size(60, 60);
             this.boardTopLeft.TabIndex = 5;
             this.boardTopLeft.UseVisualStyleBackColor = false;
+            this.boardTopLeft.Click += new System.EventHandler(this.boardTopLeft_Click);
             // 
             // boardTopRight
             // 
@@ -159,6 +165,7 @@
             this.boardTopRight.Size = new System.Drawing.Size(60, 60);
             this.boardTopRight.TabIndex = 6;
             this.boardTopRight.UseVisualStyleBackColor = false;
+            this.boardTopRight.Click += new System.EventHandler(this.boardTopRight_Click);
             // 
             // boardBottomLeft
             // 
@@ -175,6 +182,7 @@
             this.boardBottomLeft.Size = new System.Drawing.Size(60, 60);
             this.boardBottomLeft.TabIndex = 7;
             this.boardBottomLeft.UseVisualStyleBackColor = false;
+            this.boardBottomLeft.Click += new System.EventHandler(this.boardBottomLeft_Click);
             // 
             // boardBottomRight
             // 
@@ -191,6 +199,7 @@
             this.boardBottomRight.Size = new System.Drawing.Size(60, 60);
             this.boardBottomRight.TabIndex = 8;
             this.boardBottomRight.UseVisualStyleBackColor = false;
+            this.boardBottomRight.Click += new System.EventHandler(this.boardBottomRight_Click);
             // 
             // Title
             // 
@@ -231,6 +240,7 @@
             this.resetButton.Text = "Reset";
             this.resetButton.textColor = System.Drawing.Color.White;
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // scoreLabel
             // 
@@ -241,15 +251,15 @@
             this.scoreLabel.TabIndex = 12;
             this.scoreLabel.textColor = System.Drawing.Color.White;
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(221, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 15);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Click a spot to start!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.titleLabel.Location = new System.Drawing.Point(134, 121);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(293, 15);
+            this.titleLabel.TabIndex = 13;
+            this.titleLabel.Text = "Choose a player type!";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titleLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // xPlayer
             // 
@@ -261,6 +271,7 @@
             this.xPlayer.TabStop = true;
             this.xPlayer.Text = "x";
             this.xPlayer.UseVisualStyleBackColor = true;
+            this.xPlayer.CheckedChanged += new System.EventHandler(this.xPlayer_CheckedChanged);
             // 
             // oPlayer
             // 
@@ -284,7 +295,7 @@
             this.ClientSize = new System.Drawing.Size(560, 537);
             this.Controls.Add(this.oPlayer);
             this.Controls.Add(this.xPlayer);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.TitlePic);
@@ -326,7 +337,7 @@
         private PictureBox TitlePic;
         private RButton resetButton;
         private RLabel scoreLabel;
-        private Label label1;
+        private Label titleLabel;
         private RadioButton xPlayer;
         private RadioButton oPlayer;
     }
